@@ -7,8 +7,8 @@ from yelp.oauth1_authenticator import Oauth1Authenticator
 
 import os
 
-from dotenv import load_dotenv, find_dotenv
-load_dotenv(find_dotenv())
+# from dotenv import load_dotenv, find_dotenv
+# load_dotenv(find_dotenv())
 
 def get_business(location, type1):
 	auth = Oauth1Authenticator(
