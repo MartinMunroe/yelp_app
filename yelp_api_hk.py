@@ -57,7 +57,7 @@ def about():
 	return render_template('about.html')
 
 if __name__ == "__main__":
-	port = int(os.environ.get("Port", 5000))
+	port = int(os.environ["Port", 5000])
 	app.run(host="0.0.0.0", port=port)
 
 # location = input ("What is your city: ")
