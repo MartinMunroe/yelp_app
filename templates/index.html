@@ -1,0 +1,50 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" integrity="2hfp1SzUoho7/TsGGGDaFdsuuDL0LX2hnUp6VkX3CUQ2K4K+xjboZdsXyp4oUHZj" crossorigin="anonymous">
+	</head>
+	<body>
+		<div class="jumbotron">
+			<div class="container">
+				{% if bizrecs %}
+					<h1> <!-- {{ bizrecs }} </h1> -->
+						{% for bizs in bizrecs %}
+							<div> 
+								<Td>
+								{{ bizs['name']}}
+								</Td>
+								<Td>
+								{{ bizs['rating']}}
+								</Td>
+								<Td>
+								{{ bizs['phone']}}
+								</Td>
+							</div>
+							{% endfor %}
+					</h1>		
+					<form action="/" class="form-inline">
+						<div class="form-group">
+							<input type="text" name="city_nbiz" placeholder="Try another city/muse combo" class="form-control">
+						</div>
+						<input type="submit" value="Submit" class="btn btn-primary">
+					</form>
+				{% else %}
+					<h1>Please type in two words--a one word city--and one word business for top 3 yelp Recs</h1>
+					<p>Type the city and biz in the one box below</p>
+					<form action="/" class = "form-inline">
+						<div class="form-group">
+							<input type="text" name="city_nbiz" placeholder="Enter a city and desired muse" class="form-control">
+						</div>
+						<input type="submit" value="Submit" class="btn btn-primary")>
+					</form>
+					<!-- <form action="/" class = "form-inline">
+						<div class="form-group">
+							<input type="text" name="type1" placeholder="Enter a business" class="form-control">
+						</div>
+						<input type="submit" value="Submit" class="btn btn-primary")>
+					</form> -->
+					<a href="{{ url_for('about') }}">About this project</a>
+				{% endif %}					
+			</div>
+		</div>
+	</body>
+</html>
